@@ -34,11 +34,11 @@ const findMaximumSubarray = (arr, low, high) => {
     } else {
         const mid = Math.floor((low + high) / 2);
 
-        const leftResult = findMaxCrossingSubarray(arr,low,mid);
-        const rightResult = findMaxCrossingSubarray(arr, mid+1,high);
-        const crossResult = findMaxCrossingSubarray(arr,low, mid,high);
+        const leftResult = findMaxCrossingSubarray(arr, low, mid);
+        const rightResult = findMaxCrossingSubarray(arr, mid + 1, high);
+        const crossResult = findMaxCrossingSubarray(arr, low, mid, high);
 
-        if(leftResult.sum >= rightResult.sum && leftResult.sum >= crossResult.sum){
+        if (leftResult.sum >= rightResult.sum && leftResult.sum >= crossResult.sum) {
             return leftResult;
         } else if (rightResult.sum >= leftResult.sum && rightResult.sum >= crossResult.sum) {
             return rightResult;
@@ -48,3 +48,6 @@ const findMaximumSubarray = (arr, low, high) => {
     }
 }
 
+const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+const result = findMaximumSubarray(arr, 0, arr.length - 1);
+console.log(`Maximum Subarray: Start=${result.maxLeft}, End=${result.maxRight}, Sum=${result.sum}`);

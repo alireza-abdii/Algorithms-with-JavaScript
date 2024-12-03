@@ -20,5 +20,7 @@ const findMostRepeatedWord = words => {
     return { word: mostWord, count: maxCount };
 }
 
-
+const wordsArray = ["apple", "banana", "apple", "orange", "banana", "apple"];
+const result = findMostRepeatedWord(wordsArray);
+console.log(`Most frequent word is '${result.word}' with a count of ${result.count}.`);
 

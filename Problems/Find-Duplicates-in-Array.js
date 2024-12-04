@@ -2,7 +2,7 @@
 
 const findDuplicates = arr => {
     const counts = {};
-    const duplicates = {};
+    const duplicates = [];
 
     arr.forEach(el => {
         counts[el] = (counts[el] || 0) + 1;
@@ -14,15 +14,15 @@ const findDuplicates = arr => {
         }
     }
 
-    const uniqueArray = arr.filter(num => counts[num] === 1);
+    const uniqueArray = Object.keys(counts);
 
     return { duplicates, uniqueArray };
 }
 
 const stringArray = ["apple", "banana", "apple", "orange", "banana", "grape", "apple"];
 const numberArray = [1, 2, 3, 2, 4, 5, 6, 3, 3, 7, 8, 8];
-const stringResult = findAndRemoveDuplicates(stringArray);
-const numberResult = findAndRemoveDuplicates(numberArray);
+const stringResult = findDuplicates(stringArray);
+const numberResult = findDuplicates(numberArray);
 
 console.log("Duplicates Strings:", stringResult.duplicates);
 console.log("Array without duplicates strings:", stringResult.uniqueArray);

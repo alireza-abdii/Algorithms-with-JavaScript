@@ -10,7 +10,7 @@ const findDuplicates = arr => {
 
     for (let [key, value] of Object.entries(counts)) {
         if (value > 1) {
-            duplicates.push({ element: +key, count: value });
+            duplicates.push({ element: key, count: value });
         }
     }
 

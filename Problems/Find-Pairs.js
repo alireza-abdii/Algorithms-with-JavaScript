@@ -1,0 +1,5 @@
+
+
+const findPairs = (arr, target) => {
+    
+}

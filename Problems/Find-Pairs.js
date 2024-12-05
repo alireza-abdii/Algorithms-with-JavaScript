@@ -15,3 +15,5 @@ const findPairs = (arr, target) => {
     return pairs;
 }
 
+const numbersArray = [2, 7, 11, 15, -2, 3, 6, 4];
+console.log("Pairs: ", findPairs(numbersArray, 9));

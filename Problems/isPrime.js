@@ -4,7 +4,7 @@ const isPrime = num => {
     let divisor = 2;
 
     while (num > divisor) {
-        if (n % divisor === 0) {
+        if (num % divisor === 0) {
             return false
         } else {
             divisor++;
@@ -13,3 +13,4 @@ const isPrime = num => {
     return true;
 }
 
+console.log(isPrime(4));

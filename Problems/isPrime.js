@@ -1,0 +1,5 @@
+
+
+const isPrime = num => {
+    
+}

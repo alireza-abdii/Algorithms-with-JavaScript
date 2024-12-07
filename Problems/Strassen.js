@@ -4,7 +4,7 @@ const strassenMultiply = (A, B) => {
     const n = A.length;
 
     if (n === 1) {
-        return [A[0][0] * B[0][0]];
+        return [[A[0][0] * B[0][0]]];
     }
 
     const mid = Math.floor(n / 2);
@@ -33,20 +33,20 @@ const strassenMultiply = (A, B) => {
     const C22 = addMatrices(subtractMatrices(addMatrices(M1, M3), M2), M6);
 
     return combineMatrices(C11, C12, C21, C22);
-}
+};
 
 const addMatrices = (A, B) => {
     const n = A.length;
     const result = Array.from({ length: n }, () => Array(n).fill(0));
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
-            result[i][j] = A[i][j] - B[i][j]
+            result[i][j] = A[i][j] + B[i][j];
         }
     }
     return result;
-}
+};
 
-const substractMatrices = (A, B) => {
+const subtractMatrices = (A, B) => {
     const n = A.length;
     const result = Array.from({ length: n }, () => Array(n).fill(0));
     for (let i = 0; i < n; i++) {
@@ -55,7 +55,7 @@ const substractMatrices = (A, B) => {
         }
     }
     return result;
-}
+};
 
 const combineMatrices = (C11, C12, C21, C22) => {
     const n = C11.length;
@@ -67,8 +67,19 @@ const combineMatrices = (C11, C12, C21, C22) => {
             result[i][j + n] = C12[i][j];
             result[i + n][j] = C21[i][j];
             result[i + n][j + n] = C22[i][j];
-
         }
     }
     return result;
-}
+};
+
+const A = [
+    [1, 2],
+    [3, 4]
+];
+
+const B = [
+    [5, 6],
+    [7, 8]
+];
+
+console.log("Result:", strassenMultiply(A, B));

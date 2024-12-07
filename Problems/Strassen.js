@@ -35,12 +35,23 @@ const strassenMultiply = (A, B) => {
     return combineMatrices(C11, C12, C21, C22);
 }
 
-const addMatrices = (A,B) => {
+const addMatrices = (A, B) => {
     const n = A.length;
-    const result = Array.from({length: n}, () => Array(n).fill(0));
-    for(let i = 0; i< n; i++){
-        for(let j = 0; j < n; j++){
+    const result = Array.from({ length: n }, () => Array(n).fill(0));
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
             result[i][j] = A[i][j] - B[i][j]
+        }
+    }
+    return result;
+}
+
+const substractMatrices = (A, B) => {
+    const n = A.length;
+    const result = Array.from({ length: n }, () => Array(n).fill(0));
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            result[i][j] = A[i][j] - B[i][j];
         }
     }
     return result;

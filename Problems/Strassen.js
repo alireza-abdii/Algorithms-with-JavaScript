@@ -57,3 +57,18 @@ const substractMatrices = (A, B) => {
     return result;
 }
 
+const combineMatrices = (C11, C12, C21, C22) => {
+    const n = C11.length;
+    const result = Array.from({ length: n * 2 }, () => Array(2 * n).fill(0));
+
+    for (let i = 0; i < n; i++) {
+        for (let j = 0; j < n; j++) {
+            result[i][j] = C11[i][j];
+            result[i][j + n] = C12[i][j];
+            result[i + n][j] = C21[i][j];
+            result[i + n][j + n] = C22[i][j];
+
+        }
+    }
+    return result;
+}

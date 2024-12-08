@@ -24,6 +24,5 @@ const B = [
     [3, 2, 1]
 ];
 
-const result = squareMatrixMultiply(A, B);
 console.log("Result:");
-console.table(result);
+console.table(squareMatrixMultiply(A, B));

@@ -1,11 +1,11 @@
 
 
-const findDuplicates = str => {
+const removeDuplicates = str => {
     const seen = new Set();
     let result = [];
 
     for (const char of str) {
-        if(!seen.has(char)){
+        if (!seen.has(char)) {
             seen.add(char);
             result += char;
         }
@@ -13,3 +13,7 @@ const findDuplicates = str => {
 
     return result;
 }
+
+const input = "abacbdceffg";
+console.log("Input String:", input);
+console.log("String without Duplicates:", removeDuplicates(input));

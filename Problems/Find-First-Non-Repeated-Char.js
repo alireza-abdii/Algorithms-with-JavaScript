@@ -20,3 +20,4 @@ const firstNonReapetedChar = str => {
     }
 }
 
+console.log(firstNonReapetedChar('the quick brown fox jumps then quickly blow air'));

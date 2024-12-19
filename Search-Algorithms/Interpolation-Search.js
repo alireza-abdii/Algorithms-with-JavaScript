@@ -1,0 +1,5 @@
+
+
+const interpolationSearch = (arr,target) => {
+    
+}

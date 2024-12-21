@@ -17,3 +17,13 @@ const ternarySearch = (arr, target, low, high) => {
         return ternarySearch(arr, target, mid1 + 1, mid2 - 1);
     }
 }
+
+const sortedArray = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+const target = 13;
+
+const result = ternarySearch(sortedArray, target, 0, sortedArray.length - 1);
+console.log(
+    result !== -1
+        ? `Target found at index: ${result}`
+        : "Target not found"
+);

@@ -1,0 +1,5 @@
+
+
+const rodCutting = (prices, n) => {
+    
+}

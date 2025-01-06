@@ -22,3 +22,17 @@ const matrixMultiply = (a, b) => {
 
     return result;
 }
+
+const A = [
+    [1, 2],
+    [3, 4],
+    [5, 6]
+];
+
+const B = [
+    [7, 8, 9],
+    [10, 11, 12]
+];
+
+console.log("Result of Matrix Multiplication:");
+console.table(matrixMultiply(A, B));

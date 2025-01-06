@@ -22,3 +22,10 @@ const matrixChainOrder = (dims) => {
 
     return { minCost: m[0][n - 1], splits: s };
 }
+
+const dims = [10, 20, 30, 40, 30];
+const result = matrixChainOrder(dims);
+
+console.log("Minimum Cost:", result.minCost);
+console.log("Splits Table:");
+console.table(result.splits);

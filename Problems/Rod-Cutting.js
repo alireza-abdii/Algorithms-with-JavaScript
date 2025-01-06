@@ -13,3 +13,8 @@ const rodCutting = (prices, n) => {
 
     return dp[n];
 }
+
+const price = [2, 5, 7, 8];
+const n = 4;
+
+console.log(`Maximum profit: ${rodCutting(price, n)}`);

@@ -26,4 +26,11 @@ const optimalBST = (keys, p, q) => {
     }
 
     return cost[0][n];
-}
+};
+
+const keys = [10, 20, 30];
+const p = [0.3, 0.2, 0.5];
+const q = [0.1, 0.1, 0.1, 0.1];
+
+const result = optimalBST(keys, p, q);
+console.log(`Minimum cost of Optimal BST: ${result}`);

@@ -1,0 +1,5 @@
+
+
+const activitySelection = (activities) => {
+    
+}

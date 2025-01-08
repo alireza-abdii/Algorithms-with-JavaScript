@@ -50,9 +50,15 @@ const huffmanEncoding = (input) => {
 
     const huffmanTree = buildHuffmanTree(freqMap);
 
-    const huffmanCodes = generateHuffmanCodes(huffmanCodes);
+    const huffmanCodes = generateHuffmanCodes(huffmanTree);
 
     const encodedData = input.split("").map(char => huffmanCodes[char]).join("");
 
     return { huffmanCodes, encodedData, huffmanTree };
 }
+
+const inputString = "huffman coding algorithm";
+const { huffmanCodes, encodedData } = huffmanEncoding(inputString);
+
+console.log("Huffman Codes:", huffmanCodes);
+console.log("Encoded Data:", encodedData);

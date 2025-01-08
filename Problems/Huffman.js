@@ -41,3 +41,18 @@ const generateHuffmanCodes = (node, prefix = "", codes = {}) => {
 
     return codes;
 }
+
+const huffmanEncoding = (input) => {
+    const freqMap = {};
+    for (const char of input) {
+        freqMap[char] = (freqMap[char] || 0) + 1;
+    }
+
+    const huffmanTree = buildHuffmanTree(freqMap);
+
+    const huffmanCodes = generateHuffmanCodes(huffmanCodes);
+
+    const encodedData = input.split("").map(char => huffmanCodes[char]).join("");
+
+    return { huffmanCodes, encodedData, huffmanTree };
+}

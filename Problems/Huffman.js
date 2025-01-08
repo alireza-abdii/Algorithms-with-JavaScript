@@ -28,3 +28,16 @@ const buildHuffmanTree = (freqMap) => {
 
     return pq[0];
 }
+
+const generateHuffmanCodes = (node, prefix = "", codes = {}) => {
+    if (!node) return;
+
+    if (node.char !== null) {
+        codes[node.char] = prefix;
+    }
+
+    generateHuffmanCodes(node.left, prefix + "0", codes);
+    generateHuffmanCodes(node.right, prefix + "1", codes);
+
+    return codes;
+}

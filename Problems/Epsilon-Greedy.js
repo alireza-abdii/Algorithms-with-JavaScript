@@ -26,3 +26,19 @@ class EpsilonGreedy {
     }
 }
 
+const numArms = 3;
+const epsilon = 0.1;
+const steps = 100;
+const bandit = new EpsilonGreedy(numArms, epsilon);
+
+const rewards = [0.1, 0.5, 0.8];
+const randomReward = (probability) => (Math.random() < probability ? 1 : 0);
+
+for (let i = 0; i < steps; i++) {
+    const selectedArm = bandit.selectArm();
+    const reward = randomReward(rewards[selectedArm]);
+    bandit.update(selectedArm, reward);
+}
+
+console.log("Final estimated values:", bandit.values);
+console.log("Arm counts:", bandit.counts);

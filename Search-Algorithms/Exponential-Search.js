@@ -14,3 +14,7 @@ const binarySearch = (arr, target, low, high) => {
     }
     return -1;
 }
+
+const exponetialSearch = (arr, target) => {
+    
+}

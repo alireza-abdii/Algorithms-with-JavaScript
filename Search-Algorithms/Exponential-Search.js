@@ -15,7 +15,7 @@ const binarySearch = (arr, target, low, high) => {
     return -1;
 }
 
-const exponetialSearch = (arr, target) => {
+const exponentialSearch = (arr, target) => {
     const n = arr.length;
 
     if (arr[0] === target) return 0;
@@ -27,3 +27,12 @@ const exponetialSearch = (arr, target) => {
 
     return binarySearch(arr, target, Math.floor(i / 2), Math.min(i, n - 1));
 }
+
+const sortedArray = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21];
+const target = 13;
+
+const result = exponentialSearch(sortedArray, target);
+
+console.log(result !== -1
+    ? `Element found at index: ${result}`
+    : "Element not found");

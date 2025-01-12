@@ -77,3 +77,15 @@ class MinHeap {
         return this.heap.length > 0 ? this.heap[0] : null;
     }
 }
+
+const heap = new MinHeap();
+heap.insert(10);
+heap.insert(20);
+heap.insert(5);
+heap.insert(6);
+heap.insert(1);
+
+console.log("Heap:", heap.heap);
+console.log("Extract Min:", heap.extractMin());
+console.log("Heap after extraction:", heap.heap);
+console.log("Peek Min:", heap.peek());

@@ -1,0 +1,5 @@
+
+
+const computeLPSArray = (pattern) => {
+    
+}

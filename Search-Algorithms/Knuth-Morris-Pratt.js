@@ -55,3 +55,14 @@ const KMP = (text, pattern) => {
 
     return result;
 };
+
+const text = "ababcabcabababd";
+const pattern = "ababd";
+
+const occurrences = KMP(text, pattern);
+
+if (occurrences.length > 0) {
+    console.log(`Pattern found at indices: ${occurrences.join(", ")}`);
+} else {
+    console.log("Pattern not found");
+}

@@ -23,3 +23,7 @@ const computeLPSArray = (pattern) => {
 
     return lps;
 }
+
+const KMP = (text,pattern) => {
+    
+}

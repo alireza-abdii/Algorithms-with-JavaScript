@@ -40,3 +40,9 @@ const radixSort = (arr) => {
 
     return arr;
 };
+
+const arr = [170, 45, 75, 90, 802, 24, 2, 66];
+console.log("Original Array:", arr);
+
+const sortedArray = radixSort(arr);
+console.log("Sorted Array:", sortedArray);

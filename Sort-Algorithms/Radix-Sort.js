@@ -30,5 +30,13 @@ const countingSortByDigit = (arr, place) => {
 };
 
 const radixSort = (arr) => {
+    const max = getMax(arr);
+    let place = 1;
 
-}
+    while (Math.floor(max / place) > 0) {
+        countingSortByDigit(arr, place);
+        place *= 10;
+    }
+
+    return arr;
+};

@@ -60,3 +60,16 @@ const closestPairDivideAndConquer = (points) => {
 
     return closestUtil(points);
 };
+
+const points = [
+    { x: 2, y: 3 },
+    { x: 12, y: 30 },
+    { x: 40, y: 50 },
+    { x: 5, y: 1 },
+    { x: 12, y: 10 },
+    { x: 3, y: 4 }
+];
+
+const result = closestPairDivideAndConquer(points);
+console.log("Minimum Distance:", result.minDist);
+console.log("Closest Pair:", result.closestPair);

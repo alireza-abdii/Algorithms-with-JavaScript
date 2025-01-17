@@ -1,5 +1,5 @@
 
 
-const knapsack = () => {
-    
+const knapsack = (weights, values, capacity) => {
+
 }

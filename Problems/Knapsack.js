@@ -31,3 +31,11 @@ const knapsack = (weights, values, capacity) => {
         selectedItems
     };
 }
+
+const weights = [2, 3, 4, 5];
+const values = [3, 4, 5, 6];
+const capacity = 5;
+
+const result = knapsack(weights, values, capacity);
+console.log("Maximum Value:", result.maxValue);
+console.log("Selected Items (indices):", result.selectedItems);

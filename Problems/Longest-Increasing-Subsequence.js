@@ -1,6 +1,6 @@
 
 
-// Dynamic Programming
+// Dynamic Programming method
 
 const LIS_DP = (arr) => {
     const n = arr.length;
@@ -31,10 +31,11 @@ const LIS_DP = (arr) => {
 const arr = [10, 22, 9, 33, 21, 50, 41, 60, 80];
 const result = LIS_DP(arr);
 
+console.log("Dynamic Programming Method:");
 console.log("Length of LIS:", result.length);
 console.log("LIS:", result.subsequence);
 
-// Binary Search
+// Binary Search method
 
 const LIS_BinarySearch = (arr) => {
     const n = arr.length;
@@ -73,3 +74,10 @@ const LIS_BinarySearch = (arr) => {
 
     return { length: tails.length, subsequence: lis };
 };
+
+const arr2 = [10, 22, 9, 33, 21, 50, 41, 60, 80];
+const result2 = LIS_BinarySearch(arr2);
+
+console.log("Binary Search Method:");
+console.log("Length of LIS:", result2.length);
+console.log("LIS:", result2.subsequence);

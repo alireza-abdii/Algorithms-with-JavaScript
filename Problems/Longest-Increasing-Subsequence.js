@@ -12,10 +12,8 @@ const LIS_DP = (arr) => {
         }
     }
 
-    // پیدا کردن طول LIS
     const maxLength = Math.max(...dp);
 
-    // بازسازی LIS
     const lis = [];
     let currentLength = maxLength;
     for (let i = n - 1; i >= 0; i--) {
@@ -27,3 +25,9 @@ const LIS_DP = (arr) => {
 
     return { length: maxLength, subsequence: lis };
 };
+
+const arr = [10, 22, 9, 33, 21, 50, 41, 60, 80];
+const result = LIS_DP(arr);
+
+console.log("Length of LIS:", result.length);
+console.log("LIS:", result.subsequence);

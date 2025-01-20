@@ -1,5 +1,7 @@
 
 
+// Dynamic Programming
+
 const LIS_DP = (arr) => {
     const n = arr.length;
     const dp = Array(n).fill(1);
@@ -31,3 +33,43 @@ const result = LIS_DP(arr);
 
 console.log("Length of LIS:", result.length);
 console.log("LIS:", result.subsequence);
+
+// Binary Search
+
+const LIS_BinarySearch = (arr) => {
+    const n = arr.length;
+    const tails = [];
+    const indices = Array(n).fill(-1);
+    const prevIndices = Array(n).fill(-1);
+
+    for (let i = 0; i < n; i++) {
+        let low = 0, high = tails.length;
+
+        while (low < high) {
+            const mid = Math.floor((low + high) / 2);
+            if (tails[mid] < arr[i]) low = mid + 1;
+            else high = mid;
+        }
+
+        if (low < tails.length) {
+            tails[low] = arr[i];
+            indices[low] = i;
+        } else {
+            tails.push(arr[i]);
+            indices[low] = i;
+        }
+
+        if (low > 0) {
+            prevIndices[i] = indices[low - 1];
+        }
+    }
+
+    const lis = [];
+    let currentIndex = indices[tails.length - 1];
+    while (currentIndex !== -1) {
+        lis.unshift(arr[currentIndex]);
+        currentIndex = prevIndices[currentIndex];
+    }
+
+    return { length: tails.length, subsequence: lis };
+};

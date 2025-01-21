@@ -55,4 +55,32 @@ class MinHeap {
     }
 }
 
-const dijkstra = (graph, start) => {}
+const dijkstra = (graph, start) => {
+    const distances = {};
+    const visited = {};
+    const minHeap = new MinHeap();
+
+    for (let node in graph) {
+        distances[node] = Infinity;
+    }
+    distances[start] = 0;
+    minHeap.insert(start, 0);
+
+    while (!minHeap.isEmpty()) {
+        const { node: currentNode, distance: currentDistance } = minHeap.extractMin();
+
+        if (visited[currentNode]) continue;
+        visited[currentNode] = true;
+
+        for (let neighbor in graph[currentNode]) {
+            const newDistance = currentDistance + graph[currentNode][neighbor];
+
+            if (newDistance < distances[neighbor]) {
+                distances[neighbor] = newDistance;
+                minHeap.insert(neighbor, newDistance);
+            }
+        }
+    }
+
+    return distances;
+};

@@ -54,3 +54,5 @@ class MinHeap {
         return this.heap.length === 0;
     }
 }
+
+const dijkstra = (graph, start) => {}

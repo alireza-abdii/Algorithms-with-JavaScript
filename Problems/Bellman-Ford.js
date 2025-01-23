@@ -1,3 +1,5 @@
 
 
-const bellmanFord = 
+const bellmanFord = (graph, start, vertices) => {
+    
+}

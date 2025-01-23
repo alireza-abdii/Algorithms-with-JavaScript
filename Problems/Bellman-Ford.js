@@ -31,3 +31,21 @@ const bellmanFord = (graph, start, vertices) => {
 
     return distances;
 };
+
+const graph = {
+    A: { B: -1, C: 4 },
+    B: { C: 3, D: 2, E: 2 },
+    C: {},
+    D: { B: 1, C: 5 },
+    E: { D: -3 }
+};
+
+const vertices = ["A", "B", "C", "D", "E"];
+const startNode = "A";
+
+try {
+    const result = bellmanFord(graph, startNode, vertices);
+    console.log(`Shortest distances from ${startNode}:`, result);
+} catch (error) {
+    console.error(error.message);
+}

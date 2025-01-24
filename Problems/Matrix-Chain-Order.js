@@ -1,6 +1,8 @@
 
 
-const matrixChainOrder = (dims) => {
+const matrixChainOrder = (matrices) => {
+    const dims = matrices.map((matrix) => matrix[0]);
+    dims.push(matrices[matrices.length - 1][1]);
     const n = dims.length - 1;
     const m = Array.from({ length: n }, () => Array(n).fill(0));
     const s = Array.from({ length: n }, () => Array(n).fill(0));
@@ -20,12 +22,25 @@ const matrixChainOrder = (dims) => {
         }
     }
 
-    return { minCost: m[0][n - 1], splits: s };
+    const buildParentheses = (i, j) => {
+        if (i === j) return `A${i + 1}`;
+        const k = s[i][j];
+        const left = buildParentheses(i, k);
+        const right = buildParentheses(k + 1, j);
+        return `(${left} * ${right})`;
+    };
+
+    return { minCost: m[0][n - 1], parentheses: buildParentheses(0, n - 1) };
 }
 
-const dims = [10, 20, 30, 40, 30];
-const result = matrixChainOrder(dims);
+const matrices = [
+    [10, 20],
+    [20, 30],
+    [30, 40],
+    [40, 30]
+];
+
+const result = matrixChainOrder(matrices);
 
 console.log("Minimum Cost:", result.minCost);
-console.log("Splits Table:");
-console.table(result.splits);
+console.log("Optimal Parenthesization:", result.parentheses);

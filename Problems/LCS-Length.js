@@ -33,8 +33,8 @@ const lcsLength = (str1, str2) => {
     return { length: dp[m][n], lcs };
 }
 
-const str1 = "AGGTAB";
-const str2 = "GXTXAYB";
+const str1 = "101001";
+const str2 = "01010";
 
 const result = lcsLength(str1, str2);
 console.log(`Length of LCS: ${result.length}`);

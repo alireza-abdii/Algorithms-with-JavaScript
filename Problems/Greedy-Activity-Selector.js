@@ -17,12 +17,15 @@ const greedyActivitySelector = (activities) => {
 };
 
 const activities = [
+    { start: 9, end: 12 },
+    { start: 2, end: 7 },
+    { start: 8, end: 11 },
+    { start: 3, end: 6 },
+    { start: 7, end: 10 },
+    { start: 0, end: 2 },
+    { start: 4, end: 5 },
+    { start: 1, end: 4 },
     { start: 1, end: 3 },
-    { start: 2, end: 5 },
-    { start: 4, end: 6 },
-    { start: 6, end: 8 },
-    { start: 5, end: 9 },
-    { start: 8, end: 10 }
 ];
 
 const result = greedyActivitySelector(activities);

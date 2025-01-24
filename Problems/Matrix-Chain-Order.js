@@ -34,10 +34,11 @@ const matrixChainOrder = (matrices) => {
 }
 
 const matrices = [
-    [10, 20],
-    [20, 30],
-    [30, 40],
-    [40, 30]
+    [3, 5],
+    [5, 8],
+    [8, 2],
+    [2, 7],
+    [7, 3],
 ];
 
 const result = matrixChainOrder(matrices);

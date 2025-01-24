@@ -14,4 +14,4 @@ const fibonacci = n => {
     return dp[n];
 }
 
-console.log("Fibonacci(10):", fibonacci(10));
+console.log("Fibonacci():", fibonacci(10));

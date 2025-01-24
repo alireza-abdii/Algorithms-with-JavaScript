@@ -12,3 +12,10 @@ const extendedEuclid = (a, b) => {
 
     return { gcd: result.gcd, x, y };
 };
+
+const a = 56;
+const b = 15;
+
+const result = extendedEuclid(a, b);
+console.log(`GCD of ${a} and ${b}: ${result.gcd}`);
+console.log(`Coefficients x and y: x = ${result.x}, y = ${result.y}`);

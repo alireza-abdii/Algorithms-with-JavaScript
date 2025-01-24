@@ -1,6 +1,6 @@
 
 
-const activitySelection = (activities) => {
+const greedyActivitySelector = (activities) => {
     activities.sort((a, b) => a.end - b.end);
 
     const selectedActivities = [];
@@ -25,7 +25,7 @@ const activities = [
     { start: 8, end: 10 }
 ];
 
-const result = activitySelection(activities);
+const result = greedyActivitySelector(activities);
 
 console.log("Selected Activities:");
 result.forEach((activity, index) =>

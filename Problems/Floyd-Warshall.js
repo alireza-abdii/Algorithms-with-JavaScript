@@ -18,3 +18,18 @@ const floydWarshall = (graph) => {
 
     return dist;
 };
+
+// مقدار بی‌نهایت برای مسیرهایی که یال مستقیم ندارند
+const INF = Infinity;
+
+// گراف نمونه
+const graph = [
+    [0, 3, INF, 7],
+    [8, 0, 2, INF],
+    [5, INF, 0, 1],
+    [2, INF, INF, 0],
+];
+
+const result = floydWarshall(graph);
+console.log("Shortest distances between every pair of vertices:");
+result.forEach(row => console.log(row));

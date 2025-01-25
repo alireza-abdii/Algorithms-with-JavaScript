@@ -19,10 +19,8 @@ const floydWarshall = (graph) => {
     return dist;
 };
 
-// مقدار بی‌نهایت برای مسیرهایی که یال مستقیم ندارند
 const INF = Infinity;
 
-// گراف نمونه
 const graph = [
     [0, 3, INF, 7],
     [8, 0, 2, INF],

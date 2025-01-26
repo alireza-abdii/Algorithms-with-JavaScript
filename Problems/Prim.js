@@ -2,11 +2,11 @@
 
 const primMST = (graph) => {
     const V = graph.length;
-    const key = Array(V).fill(Infinity); // وزن کمترین یال برای رسیدن به گره
-    const parent = Array(V).fill(null); // ذخیره والد هر گره
-    const inMST = Array(V).fill(false); // وضعیت حضور گره در MST
+    const key = Array(V).fill(Infinity); 
+    const parent = Array(V).fill(null);
+    const inMST = Array(V).fill(false);
 
-    key[0] = 0; // شروع از رأس 0
+    key[0] = 0; 
     parent[0] = -1;
 
     for (let count = 0; count < V - 1; count++) {

@@ -2,11 +2,11 @@
 
 const primMST = (graph) => {
     const V = graph.length;
-    const key = Array(V).fill(Infinity); 
+    const key = Array(V).fill(Infinity);
     const parent = Array(V).fill(null);
     const inMST = Array(V).fill(false);
 
-    key[0] = 0; 
+    key[0] = 0;
     parent[0] = -1;
 
     for (let count = 0; count < V - 1; count++) {

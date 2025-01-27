@@ -8,7 +8,7 @@ class UnionFind {
 
     find(u) {
         if (this.parent[u] !== u) {
-            this.parent[u] = this.find(this.parent[u]); // مسیر فشرده‌سازی
+            this.parent[u] = this.find(this.parent[u]);
         }
         return this.parent[u];
     }
@@ -31,8 +31,7 @@ class UnionFind {
 }
 
 const kruskalMST = (edges, V) => {
-    edges.sort((a, b) => a[2] - b[2]); // مرتب‌سازی یال‌ها بر اساس وزن
-
+    edges.sort((a, b) => a[2] - b[2]); 
     const unionFind = new UnionFind(V);
     const mst = [];
 

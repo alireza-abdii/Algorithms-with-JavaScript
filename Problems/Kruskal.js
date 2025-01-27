@@ -29,3 +29,19 @@ class UnionFind {
         }
     }
 }
+
+const kruskalMST = (edges, V) => {
+    edges.sort((a, b) => a[2] - b[2]); // مرتب‌سازی یال‌ها بر اساس وزن
+
+    const unionFind = new UnionFind(V);
+    const mst = [];
+
+    for (const [u, v, weight] of edges) {
+        if (unionFind.find(u) !== unionFind.find(v)) {
+            unionFind.union(u, v);
+            mst.push([u, v, weight]);
+        }
+    }
+
+    return mst;
+};

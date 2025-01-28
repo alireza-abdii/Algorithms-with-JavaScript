@@ -29,7 +29,7 @@ const zAlgorithm = (text, pattern) => {
 
     for (let i = patternLength + 1; i < z.length; i++) {
         if (z[i] === patternLength) {
-            result.push(i - patternLength - 1); // شاخص شروع تطابق
+            result.push(i - patternLength - 1);
         }
     }
 

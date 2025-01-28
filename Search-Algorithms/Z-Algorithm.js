@@ -20,3 +20,18 @@ const buildZArray = (s) => {
 
     return z;
 };
+
+const zAlgorithm = (text, pattern) => {
+    const concat = pattern + "$" + text;
+    const z = buildZArray(concat);
+    const result = [];
+    const patternLength = pattern.length;
+
+    for (let i = patternLength + 1; i < z.length; i++) {
+        if (z[i] === patternLength) {
+            result.push(i - patternLength - 1); // شاخص شروع تطابق
+        }
+    }
+
+    return result;
+};

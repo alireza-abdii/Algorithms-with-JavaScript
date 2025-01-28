@@ -31,7 +31,7 @@ class UnionFind {
 }
 
 const kruskalMST = (edges, V) => {
-    edges.sort((a, b) => a[2] - b[2]); 
+    edges.sort((a, b) => a[2] - b[2]);
     const unionFind = new UnionFind(V);
     const mst = [];
 
@@ -55,6 +55,6 @@ const edges = [
     [3, 4, 9]
 ];
 
-const V = 5; 
+const V = 5;
 console.log("Edges in MST using Kruskal:");
 console.table(kruskalMST(edges, V));

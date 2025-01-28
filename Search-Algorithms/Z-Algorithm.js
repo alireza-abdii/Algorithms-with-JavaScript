@@ -35,3 +35,9 @@ const zAlgorithm = (text, pattern) => {
 
     return result;
 };
+
+const text = "ababcababcabc";
+const pattern = "abc";
+
+const matches = zAlgorithm(text, pattern);
+console.log(`Pattern found at indices: ${matches}`);

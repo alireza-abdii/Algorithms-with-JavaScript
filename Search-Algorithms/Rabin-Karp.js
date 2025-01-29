@@ -44,3 +44,8 @@ const rabinKarp = (text, pattern, prime = 101) => {
     return result;
 };
 
+const text = "ababcabcabc";
+const pattern = "abc";
+
+const matches = rabinKarp(text, pattern);
+console.log(`Pattern found at indices: ${matches}`);

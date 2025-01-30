@@ -40,3 +40,10 @@ const buildLCPArray = (s, suffixArray) => {
 
     return lcp;
 };
+
+const text = "banana";
+const suffixArray = buildSuffixArray(text);
+console.log("Suffix Array:", suffixArray);
+
+const lcpArray = buildLCPArray(text, suffixArray);
+console.log("LCP Array:", lcpArray);

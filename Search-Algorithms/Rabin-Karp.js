@@ -1,11 +1,11 @@
 
 
 const rabinKarp = (text, pattern, prime = 101) => {
-    const d = 256; 
+    const d = 256;
     const n = text.length;
     const m = pattern.length;
-    let pHash = 0; 
-    let tHash = 0; 
+    let pHash = 0;
+    let tHash = 0;
     let h = 1;
     const result = [];
 
@@ -28,7 +28,7 @@ const rabinKarp = (text, pattern, prime = 101) => {
                 }
             }
             if (match) {
-                result.push(i); 
+                result.push(i);
             }
         }
 

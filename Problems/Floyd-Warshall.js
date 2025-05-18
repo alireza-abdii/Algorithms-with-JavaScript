@@ -1,14 +1,19 @@
 
 
 const floydWarshall = (graph) => {
-    const V = graph.length;
-    const dist = Array.from({ length: V }, (_, i) =>
-        Array.from({ length: V }, (_, j) => graph[i][j])
-    );
+    const nodes = Object.keys(graph);
+    const dist = {};
 
-    for (let k = 0; k < V; k++) {
-        for (let i = 0; i < V; i++) {
-            for (let j = 0; j < V; j++) {
+    for (let i of nodes) {
+        dist[i] = {};
+        for (let j of nodes) {
+            dist[i][j] = i === j ? 0 : (graph[i][j] ?? Infinity);
+        }
+    }
+
+    for (let k of nodes) {
+        for (let i of nodes) {
+            for (let j of nodes) {
                 if (dist[i][k] + dist[k][j] < dist[i][j]) {
                     dist[i][j] = dist[i][k] + dist[k][j];
                 }
@@ -19,15 +24,13 @@ const floydWarshall = (graph) => {
     return dist;
 };
 
-const INF = Infinity;
+const graph = {
+    A: { B: 1, C: 4 },
+    B: { A: 1, C: 2, D: 5 },
+    C: { A: 4, B: 2, D: 1 },
+    D: { B: 5, C: 1 }
+};
 
-const graph = [
-    [0, 3, INF, 7],
-    [8, 0, 2, INF],
-    [5, INF, 0, 1],
-    [2, INF, INF, 0],
-];
+console.log("Floyd-Warshall:", floydWarshall(graph)["A"]);
 
-const result = floydWarshall(graph);
-console.log("Shortest distances between every pair of vertices:");
-result.forEach(row => console.log(row));
+

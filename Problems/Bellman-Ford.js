@@ -1,21 +1,21 @@
 
 
-const bellmanFord = (graph, start, vertices) => {
+const bellmanFord = (graph, start) => {
     const distances = {};
-    const edges = [];
-
-    for (let vertex of vertices) {
-        distances[vertex] = Infinity;
+    for (let node in graph) {
+        distances[node] = Infinity;
     }
     distances[start] = 0;
 
-    for (let [u, neighbors] of Object.entries(graph)) {
-        for (let [v, weight] of Object.entries(neighbors)) {
-            edges.push([u, v, weight]);
+    const edges = [];
+    for (let u in graph) {
+        for (let v in graph[u]) {
+            edges.push([u, v, graph[u][v]]);
         }
     }
 
-    for (let i = 0; i < vertices.length - 1; i++) {
+    const V = Object.keys(graph).length;
+    for (let i = 0; i < V - 1; i++) {
         for (let [u, v, weight] of edges) {
             if (distances[u] + weight < distances[v]) {
                 distances[v] = distances[u] + weight;
@@ -33,19 +33,10 @@ const bellmanFord = (graph, start, vertices) => {
 };
 
 const graph = {
-    A: { B: -1, C: 4 },
-    B: { C: 3, D: 2, E: 2 },
-    C: {},
-    D: { B: 1, C: 5 },
-    E: { D: -3 }
+    A: { B: 1, C: 4 },
+    B: { A: 1, C: 2, D: 5 },
+    C: { A: 4, B: 2, D: 1 },
+    D: { B: 5, C: 1 }
 };
 
-const vertices = ["A", "B", "C", "D", "E"];
-const startNode = "A";
-
-try {
-    const result = bellmanFord(graph, startNode, vertices);
-    console.log(`Shortest distances from ${startNode}:`, result);
-} catch (error) {
-    console.error(error.message);
-}
+console.log("Bellman-Ford:", bellmanFord(graph, "A"));
